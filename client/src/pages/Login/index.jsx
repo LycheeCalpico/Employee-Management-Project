@@ -40,7 +40,13 @@ export default function LogIn() {
         if (res.payload.username === "hr") {
           navigate("/hiring-management");
         } else {
+          setTimeout(() => {
+            // Set loading to false after 1 second
+        
+          }, 1000);
+     
           if (user.onboardingStatus === "approved") {
+            console.log("user onboarding", user.onboardingStatus);
             navigate("/personal-information");
           } else {
             navigate("/onboarding");
